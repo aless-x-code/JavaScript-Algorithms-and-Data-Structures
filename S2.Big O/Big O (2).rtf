@@ -1,0 +1,388 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 Monaco;
+\f3\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red251\green0\blue7;\red25\green60\blue255;
+\red255\green255\blue255;\red251\green0\blue255;\red255\green255\blue255;\red25\green60\blue255;\red255\green255\blue255;
+\red251\green0\blue255;\red255\green255\blue255;\red115\green138\blue4;\red83\green104\blue112;\red33\green118\blue199;
+\red252\green244\blue220;\red37\green146\blue134;\red209\green28\blue36;\red252\green117\blue255;\red252\green117\blue255;
+\red163\green85\blue14;\red255\green255\blue255;\red21\green22\blue24;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c100000\c12195\c0;\cssrgb\c12594\c35385\c100000;
+\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c100000\c7248\c100000;\cssrgb\c100000\c100000\c99971\c0;\cssrgb\c12594\c35385\c100000;\cssrgb\c100000\c100000\c99985\c0;
+\cssrgb\c100000\c7248\c100000;\cssrgb\c100000\c100000\c99971\c0;\cssrgb\c52157\c60000\c0;\cssrgb\c39608\c48235\c51373;\cssrgb\c14902\c54510\c82353;
+\cssrgb\c99216\c96471\c89020;\cssrgb\c16471\c63137\c59608;\cssrgb\c86275\c19608\c18431;\cssrgb\c100000\c57039\c100000;\cssrgb\c100000\c57039\c100000;
+\cssrgb\c70588\c41176\c5490;\cssrgb\c100000\c100000\c100000;\cssrgb\c10980\c11373\c12157;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid103\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid104\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2880\lin2880 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww11780\viewh17140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Big O\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 O(f(n)) is number of operations a computer has to run relative to the input\
+\
+What is the trend/big picture runtime as input increases?\
+\
+f(n) = function (w/ input)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\cf3 Method 1\cf0 \
+\
+function addUpTo(n) \{ \
+	return n * (n + 1) / 2;\
+\}\
+\
+\cf4 \cb5 It will always be only one operation, so \
+\cf6 \cb7 O(1)\cf0 \cb1 \
+\
+\
+\cf3 Method 2\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 function addUpTo(n) \{ \
+	let total = 0 \
+	for (let i = 0; i <= n; i++) \{\
+		total += i;\
+	\}\
+	return total\
+\}\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf8 \cb9 It runs as many operation as n is (if n=100, it has to loop/run 100 times), so 100n, but we denote it as \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf10 \cb11 O(n)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \cb1 Another example\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs41\fsmilli20625 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 function\cf13 \strokec13  \cf14 \strokec14 printAllPairs\cf13 \strokec13 (n) \cb15 \{\
+  \cf12 \cb1 \strokec12 for\cf13 \cb15 \strokec13  (\cf12 \cb1 \strokec12 var\cf13 \cb15 \strokec13  i = \cf16 \cb1 \strokec16 0\cf13 \cb15 \strokec13 ; i < n; i++) \{ 
+\f0\fs36 \cf10 \cb11 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 O(n)
+\f1\fs41\fsmilli20625 \cf13 \cb15 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 \
+    \cf12 \cb1 \strokec12 for\cf13 \cb15 \strokec13  (\cf12 \cb1 \strokec12 var\cf13 \cb15 \strokec13  j = \cf16 \cb1 \strokec16 0\cf13 \cb15 \strokec13 ; j < n; j++) \{ 
+\f0\fs36 \cf10 \cb11 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 O(n)
+\f1\fs41\fsmilli20625 \cf13 \cb15 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 \
+      \cf17 \cb1 \strokec17 console\cf13 \cb15 \strokec13 .log(i, j);\
+    \}\
+  \}\
+\}
+\f0\fs36 \cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf8 \cb9 As input grow, the first loop run time grows, which makes the second loop grow within the runtime\cf2 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb11 O(n * n)\
+O(n^
+\fs22 2
+\fs36 )\cf2 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+Rules of thumbs for Big O\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 O(2n) = O(n)\
+\
+O(500) = O(1)\
+\
+O(13n^2) = O(n^2)\
+\
+O(5n + 2) = O(n)\
+\
+O(n^2 + 5n + 8) = O(n^2)\
+\
+- We are looking for the trend, broad picture\
+\
+- As if looking if from space, as if putting an infinite number\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Big O operations\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 1. Arithmetic operations are constant (-+*/) (as input grows, it won\'92t change runtime)\
+\
+2. Variable assignments is constant\
+\
+3. Accessing element by index is constant\
+\
+4. A loop, runtime is lenght of the loop\
+	4.1. * whatever happens inside of the loop\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Examples\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs33 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 function\cf13 \strokec13  \cf14 \strokec14 logAtMost5\cf13 \strokec13 (n) \cb15 \{\
+  \cf12 \cb1 \strokec12 for\cf13 \cb15 \strokec13  (\cf12 \cb1 \strokec12 var\cf13 \cb15 \strokec13  i = \cf16 \cb1 \strokec16 1\cf13 \cb15 \strokec13 ; i <= \cf17 \cb1 \strokec17 Math\cf13 \cb15 \strokec13 .min(\cf16 \cb1 \strokec16 5\cf13 \cb15 \strokec13 , n); i++) \{\
+    \cf17 \cb1 \strokec17 console\cf13 \cb15 \strokec13 .log(i);\
+  \}\
+\}
+\f0\fs36 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+- function will log up to n number, but will only log 5 at the most\
+\
+- Since it will run constant after 5, it is O(1)\
+	1-4 is only 4 numbers, little sum\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Space Complexity\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+- How much memory does the runtime take based on the input\
+\
+- Note, when we say space complexity, most often, we are refering to the auxiliary space complexity (space required by the algorithm itself, not the input)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Space Complexity rules of thumb\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 - Most primitives (booleans, numbers, undefined, null) inputs are constant space \
+\
+- strings require O(n) space, where n is the string length\
+\
+- Reference types (objects, arrays), also require O(n), where n is length of array/keys \
+	\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Examples\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 function\cf13 \strokec13  \cf14 \strokec14 sum\cf13 \strokec13 (arr) \cb15 \{\
+  \cf12 \cb1 \strokec12 let\cf13 \cb15 \strokec13  total = \cf16 \cb1 \strokec16 0\cf13 \cb15 \strokec13 ;\
+  \cf12 \cb1 \strokec12 for\cf13 \cb15 \strokec13  (\cf12 \cb1 \strokec12 let\cf13 \cb15 \strokec13  i = \cf16 \cb1 \strokec16 0\cf13 \cb15 \strokec13 ; i < arr.length; i++) \{\
+    total += arr[i];\
+  \}\
+  \cf12 \cb1 \strokec12 return\cf13 \cb15 \strokec13  total;\
+\}
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\fs36 \
+Space complexity \
+- Memory must store varibales\
+- total = one number\
+- i = one number\
+\
+- We have constance space \cf18 O(1) space\
+\cf0 - Always the same/constant\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 function\cf13 \strokec13  \cf14 \strokec14 double\cf13 \strokec13 (arr) \cb15 \{\
+  \cf12 \cb1 \strokec12 let\cf13 \cb15 \strokec13  newArr = [];\
+  \cf12 \cb1 \strokec12 for\cf13 \cb15 \strokec13  (\cf12 \cb1 \strokec12 let\cf13 \cb15 \strokec13  i = \cf16 \cb1 \strokec16 0\cf13 \cb15 \strokec13 ; i < arr.length; i++) \{\
+    newArr.push(\cf16 \cb1 \strokec16 2\cf13 \cb15 \strokec13  * arr[i]);\
+  \}\
+  \cf12 \cb1 \strokec12 return\cf13 \cb15 \strokec13  newArr;\
+\}\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 - newArr = [] constant\
+- newArr.push(2 * arr[i]), we are storing/creating a new array\
+	- [1, 2, 3]\
+	- [2]\
+	- [2, 4]\
+	- [2, 4, 6] <= memory (it is a new array)\
+- as array grows, so does the memory \cf19 O(n) space\cf0 \
+	
+\fs28 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\fs24 \cf20 \cb21 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 function\cf22 \strokec22  onlyElementsAtEvenIndex(array) \{\cb1 \
+\ls1\ilvl0\cf20 \cb21 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 var\cf22 \strokec22  newArray = Array(Math.ceil(array.length / 2));\
+\ls1\ilvl0\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 for\cf22 \strokec22  (\cf20 \strokec20 var\cf22 \strokec22  i = 0; i < array.length; i++) \{\cb1 \
+\ls1\ilvl0\cf20 \cb21 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 if\cf22 \strokec22  (i % 2 === 0) \{\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 newArray[i / 2] = array[i];\cb1 \
+\ls1\ilvl0\cb21 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf20 \cb21 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 return\cf22 \strokec22  newArray;\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}
+\fs28 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+
+\fs36 - newArray = constant 1 number\
+- i = constant 1 number\
+- newArray = array = +input +array space \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf19 O(n) space\cf0 \
+	\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\fs28\fsmilli14400 \cf20 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 function\cf22 \strokec22  subtotals(array) \{\cf0 \strokec23 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls2\ilvl1\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 var\cf22 \strokec22  subtotalArray = Array(array.length);\cf0 \strokec23 \
+\ls2\ilvl1\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 for\cf22 \strokec22  (\cf20 \strokec20 var\cf22 \strokec22  i = 0; i < array.length; i++) \{\cf0 \strokec23 \
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\partightenfactor0
+\ls2\ilvl2\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 var\cf22 \strokec22  subtotal = 0;\cf0 \strokec23 \
+\ls2\ilvl2\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 for\cf22 \strokec22  (\cf20 \strokec20 var\cf22 \strokec22  j = 0; j <= i; j++) \{\cf0 \strokec23 \
+\pard\tx2380\tx2880\pardeftab720\li2880\fi-2880\partightenfactor0
+\ls2\ilvl3\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 subtotal += array[j];\cf0 \strokec23 \
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\partightenfactor0
+\ls2\ilvl2\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}\cf0 \strokec23 \
+\ls2\ilvl2\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 subtotalArray[i] = subtotal;\cf0 \strokec23 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls2\ilvl1\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}\cf0 \strokec23 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls2\ilvl1\cf20 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec20 return\cf22 \strokec22  subtotalArray;\cf0 \strokec23 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf22 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec22 \}\cf0 \strokec23 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 - subtotalArray = Array(input.length)  \cf19 O(n) space\cf0 \
+- i = constant 1 number\
+- subtotal = constant 1 number\
+- j = constant 1 number\
+- subtotal = constant 1 number\
+- subtotalArray = constant 1 number\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Logarithms\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+	}
